@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://notes.gd" type="Script" id=1]
+
+[node name="Notes" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instructions" type="Label" parent="Background"]
+anchor_left = 0.341797
+anchor_top = 0.0333333
+anchor_right = 0.59668
+anchor_bottom = 0.0566667
+margin_top = -1.90735e-06
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Type here the text that you want to save:"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Text" type="TextEdit" parent="Background"]
+anchor_left = 0.0976563
+anchor_top = 0.0333333
+anchor_right = 0.878906
+anchor_bottom = 0.866667
+margin_top = 30.0
+margin_bottom = -20.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Restore" type="Button" parent="Background"]
+anchor_left = 0.292969
+anchor_top = 0.916667
+anchor_right = 0.380859
+anchor_bottom = 0.95
+mouse_default_cursor_shape = 2
+text = "Restore text"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Save" type="Button" parent="Background"]
+anchor_left = 0.488281
+anchor_top = 0.916667
+anchor_right = 0.52832
+anchor_bottom = 0.95
+mouse_default_cursor_shape = 2
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Saved" type="Label" parent="Background"]
+visible = false
+anchor_left = 0.585938
+anchor_top = 0.916667
+anchor_right = 0.625
+anchor_bottom = 0.94
+custom_colors/font_color = Color( 0.0627451, 0.607843, 0, 1 )
+text = "Saved"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Error" type="Label" parent="Background"]
+visible = false
+anchor_left = 0.585938
+anchor_top = 0.916667
+anchor_right = 0.658203
+anchor_bottom = 0.94
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Error saving"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+[connection signal="pressed" from="Background/Restore" to="." method="OnRestore"]
+[connection signal="pressed" from="Background/Save" to="." method="OnSave"]
